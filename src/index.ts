@@ -1,12 +1,6 @@
-import Observable from './core/observable'
-import Observer from './core/observer'
+import fromEvent from './operators/creation/fromEvent'
 
-const a$ = new Observable((observer: Observer) => {
-  observer.next(2)
-  observer.next(3)
-  observer.next(4)
-  observer.next(5)
-})
+const a$ = fromEvent(document, 'click')
 
 a$.subscribe(x => {
   console.log(x)
