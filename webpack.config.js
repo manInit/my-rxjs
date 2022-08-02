@@ -27,5 +27,8 @@ module.exports = {
   })],
   devServer: {
     static: './build',
+    client: {
+      logging: 'none'
+    },
   },
 }
