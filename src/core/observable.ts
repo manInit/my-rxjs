@@ -7,7 +7,7 @@ export default class Observable {
     this._subscribe = subscribe
   }
 
-  public subscribe(observer: Observer | ((val: any) => void)) {
+  public subscribe(observer: Observer | ((val: any) => void)): void {
     if (typeof observer === 'function') {
       observer = {
         next: observer
