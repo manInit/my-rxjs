@@ -1,5 +1,6 @@
 import IObserver from './observer'
 import ISubscription from './subscription'
+import TransformationOperator from './transofrmationOperator'
 
 export default class Observable {
   private _isStop: boolean
@@ -9,6 +10,13 @@ export default class Observable {
     private _subscribe: (observer: IObserver) => ISubscription
   ) {
     this._isStop = true
+  }
+
+  public pipe(...operators: TransformationOperator[]): Observable {
+    const composition = operators.reduce((g, f) => {
+      return (x: Observable) => f(g(x))
+    })
+    return composition(this)
   }
 
   public subscribe(sourceObs: IObserver | ((val?: any) => void)): ISubscription {
