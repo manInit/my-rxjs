@@ -1,4 +1,18 @@
-export * as fromEvent from './creation/fromEvent'
-export * as interval from './creation/interval'
-export * as timer from './creation/timer'
-export * as range from './creation/range'
+import fromEvent from './creation/fromEvent'
+import interval from './creation/interval'
+import range from './creation/range'
+import timer from './creation/timer'
+
+import even from './transformation/even'
+import map from './transformation/map'
+import multiply from './transformation/multiply'
+
+export {
+  fromEvent,
+  interval,
+  range,
+  timer,
+  even,
+  map,
+  multiply
+}
