@@ -1,6 +1,4 @@
-import Observable from '../../core/observable'
-import IObserver from '../../core/observer'
-import TransformationOperator from '../../core/transofrmationOperator'
+import { Observable, IObserver, TransformationOperator } from '../../core'
 
 export default (by: number): TransformationOperator => {
   return (source: Observable): Observable => {

@@ -1,5 +1,4 @@
-import Observable from '../../core/observable'
-import IObserver from '../../core/observer'
+import { Observable, IObserver } from '../../core'
 
 export default (start: number, count: number): Observable => {
   return new Observable((observer: IObserver) => {

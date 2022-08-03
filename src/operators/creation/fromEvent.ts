@@ -1,5 +1,4 @@
-import Observable from '../../core/observable'
-import IObserver from '../../core/observer'
+import { Observable, IObserver } from '../../core'
 
 export default (target: HTMLElement | Document, eventName: string): Observable => {
   return new Observable((observer: IObserver) => {
